@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Industries (U) Ltd | Concrete Pavers, Blocks & Road Kerbs in Uganda</title>
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master Industries (U) Ltd is Uganda's premier manufacturer of high-strength concrete pavers, blocks, culverts, road kerbs, and fencing poles. Quality construction materials for the tropics.">
+    <meta name="keywords" content="concrete pavers Uganda, building blocks, road kerbs, culverts, fencing poles, Master Industries, construction materials Kampala, pavers manufacturers, smart pavers, double T pavers">
+    <meta name="author" content="Master Industries (U) Ltd">
+    <link rel="canonical" href="https://www.masterindustries.biz/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.masterindustries.biz/">
+    <meta property="og:title" content="Master Industries (U) Ltd | Quality Concrete Products in Uganda">
+    <meta property="og:description" content="We manufacture distinguished and authentic concrete products including smart pavers, blocks, and road infrastructure materials designed for the tropics.">
+    <meta property="og:image" content="https://www.masterindustries.biz/images/hero/slide-1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.masterindustries.biz/">
+    <meta property="twitter:title" content="Master Industries (U) Ltd | Concrete Pavers & Blocks">
+    <meta property="twitter:description" content="Uganda's leading manufacturer of automated, high-strength concrete products. Pavers, blocks, kerbs, and more.">
+    <meta property="twitter:image" content="https://www.masterindustries.biz/images/hero/slide-1.jpg">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Master Industries (U) Ltd",
+      "image": "https://www.masterindustries.biz/images/logo.webp",
+      "url": "https://www.masterindustries.biz/",
+      "telephone": "+256 772 588 960",
+      "email": "masterindustriesug@yahoo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Namanve Industrial Park (After MOGAS Petro Station)",
+        "addressLocality": "Mukono",
+        "addressCountry": "UG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.3546,
+        "longitude": 32.6970
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/masterindustriesug",
+        "https://twitter.com/masterindustries"
+      ]
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        master: {
+                            blue: '#0F2C67',     /* Deep Corporate Blue */
+                            light: '#315299',    /* Lighter Blue for hover */
+                            red: '#bc202e',      /* Corporate Red from Logo */
+                            dark: '#1A1A1A',     /* Dark Grey/Black */
+                            grey: '#F4F4F4'      /* Light Grey Background */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; }
+        
+        .hero-slider {
+            height: 80vh;
+            min-height: 500px;
+            max-height: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Video Background Fixes */
+        .video-slide-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+        }
+        
+        .video-slide-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%) scale(1.3);
+            pointer-events: none;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .video-slide-container iframe { height: 56.25vw; }
+        }
+        @media (max-aspect-ratio: 16/9) {
+            .video-slide-container iframe { width: 177.78vh; }
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+        
+        .slide.active { opacity: 1; z-index: 1; }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Top Bar -->
+    <div class="bg-master-blue text-white py-2 text-sm hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-phone-alt text-master-red mr-2"></i> +256 772 588 960</span>
+                <span><i class="fas fa-envelope text-master-red mr-2"></i> masterindustriesug@yahoo.com</span>
+                <span><i class="fas fa-map-marker-alt text-master-red mr-2"></i> Namanve Ind. Park, Mukono</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.facebook.com/masterindustriesug" target="_blank" rel="noopener noreferrer" class="hover:text-master-red transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/masterindustries" target="_blank" rel="noopener noreferrer" class="hover:text-master-red transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/256772588960" target="_blank" rel="noopener noreferrer" class="hover:text-master-red transition" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group">
+                    <img src="images/logo.svg" 
+                         onerror="this.onerror=null; this.src='images/logo.webp';" 
+                         alt="Master Industries Logo" 
+                         class="h-20 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#home" class="text-gray-700 hover:text-master-red transition uppercase text-sm font-bold">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-master-red transition uppercase text-sm font-bold">About Us</a>
+                    <a href="#products" class="text-gray-700 hover:text-master-red transition uppercase text-sm font-bold">Products</a>
+                    <a href="#services" class="text-gray-700 hover:text-master-red transition uppercase text-sm font-bold">Services</a>
+                    <a href="#contact" class="px-6 py-3 bg-master-red text-white rounded font-bold hover:bg-red-700 transition shadow-md uppercase text-sm">
+                        Get Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-master-blue text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200">
+            <a href="#home" class="block px-6 py-4 text-gray-800 border-b font-medium">Home</a>
+            <a href="#about" class="block px-6 py-4 text-gray-800 border-b font-medium">About Us</a>
+            <a href="#products" class="block px-6 py-4 text-gray-800 border-b font-medium">Products</a>
+            <a href="#contact" class="block px-6 py-4 text-master-red font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section id="home" class="hero-slider bg-black relative group">
+        
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="absolute inset-0">
+                <img src="images/hero/slide-1.jpg" 
+                     alt="Beauty That Lasts Generations" 
+                     class="w-full h-full object-cover animate-fade-in">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-master-blue/90 via-master-blue/40 to-transparent mix-blend-multiply"></div>
+            
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
+                <span class="text-master-red font-bold tracking-widest uppercase mb-4 text-lg animate-pulse">Automated Production Line</span>
+                <h1 class="text-5xl md:text-7xl text-white font-bold mb-6 text-shadow uppercase leading-none">
+                    Beauty That Lasts <br> <span class="text-master-red">Generations</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl max-w-2xl mb-10 text-shadow">
+                    Uganda's premier manufacturer of high-strength concrete pavers, blocks, and road infrastructure materials.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#products" class="px-8 py-4 bg-master-red text-white font-bold rounded hover:bg-red-700 transition uppercase tracking-wide">
+                        View Products
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=hfjcZ-NTZy8" target="_blank" class="px-8 py-4 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-master-blue transition uppercase tracking-wide flex items-center">
+                        <i class="fas fa-play mr-2"></i> Watch Full Video
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="absolute inset-0">
+                <img src="images/hero/slide-2.jpg" 
+                     alt="Smart Paving Solutions" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-master-blue/50"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-8 md:px-24 z-10">
+                <span class="text-white/80 font-bold tracking-widest uppercase mb-4 text-lg">Eco-Friendly & Durable</span>
+                <h2 class="text-5xl md:text-7xl text-white font-bold mb-6 text-shadow uppercase">
+                    Smart Paving <br> Solutions
+                </h2>
+                <p class="text-gray-100 text-xl max-w-2xl mb-8">
+                    Transform your outdoor spaces with our eco-friendly, low-maintenance paving technology.
+                </p>
+                <a href="#contact" class="px-8 py-4 bg-white text-master-blue font-bold rounded hover:bg-gray-200 transition uppercase">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="absolute inset-0">
+                <img src="images/hero/slide-3.jpg" 
+                     alt="Industrial Strength Products" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-master-blue/60"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-8 md:px-24 z-10">
+                <span class="text-master-red font-bold tracking-widest uppercase mb-4 text-lg">Built Tough</span>
+                <h2 class="text-5xl md:text-7xl text-white font-bold mb-6 text-shadow uppercase">
+                    Industrial <br> Strength
+                </h2>
+                <p class="text-gray-100 text-xl max-w-2xl mb-8">
+                    Heavy-duty blocks and culverts designed for the toughest construction demands.
+                </p>
+                <a href="#products" class="px-8 py-4 bg-master-red text-white font-bold rounded hover:bg-red-700 transition uppercase">
+                    View Products
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <div class="absolute inset-0">
+                <img src="images/hero/slide-4.jpg" 
+                     alt="Quality Aggregates" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-master-blue/50"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-8 md:px-24 z-10">
+                <span class="text-white/80 font-bold tracking-widest uppercase mb-4 text-lg">The Foundation of Quality</span>
+                <h2 class="text-5xl md:text-7xl text-white font-bold mb-6 text-shadow uppercase">
+                    Quality <br> Aggregates
+                </h2>
+                <p class="text-gray-100 text-xl max-w-2xl mb-8">
+                    Precision-crushed stones and dust for superior concrete mixing and road base.
+                </p>
+                <a href="#contact" class="px-8 py-4 bg-white text-master-blue font-bold rounded hover:bg-gray-200 transition uppercase">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="absolute bottom-8 right-8 z-20 flex space-x-4">
+            <button onclick="changeSlide(-1)" class="w-12 h-12 bg-white/10 border border-white/30 hover:bg-master-red text-white flex items-center justify-center rounded-full transition backdrop-blur-sm">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button onclick="changeSlide(1)" class="w-12 h-12 bg-white/10 border border-white/30 hover:bg-master-red text-white flex items-center justify-center rounded-full transition backdrop-blur-sm">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-master-red/20 rounded-lg transform rotate-2 transition group-hover:rotate-0"></div>
+                    <img src="images/about/factory-aerial.jpg"
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/0F2C67?text=Factory+Aerial+View';" 
+                         alt="Factory Overview" 
+                         class="relative rounded-lg shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-master-blue text-white p-8 rounded shadow-xl hidden md:block">
+                        <p class="text-4xl font-bold text-master-red">2003</p>
+                        <p class="text-sm uppercase tracking-wide opacity-80">Established In</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-master-red font-bold tracking-widest uppercase text-sm">About Master Industries</span>
+                    <h2 class="text-4xl font-bold text-master-blue mt-2 mb-6 uppercase">Quality Concrete Products for the Tropics</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Master Industries (U) Ltd has mastered the technical etiquette of the construction industry. We provide tailor-made product specifications designed specifically for the tropics.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        With a state-of-the-art fully automated production line, we are your reliable partner for house and road concrete product needs. Our products are competitive in pricing, readily available, and distinctive in quality.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-master-red mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Automated Production</h4>
+                                <p class="text-sm text-gray-500">Consistent moisture ratios & high compression.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-master-red mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Custom Designs</h4>
+                                <p class="text-sm text-gray-500">Wide array of shapes, sizes, and colors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="text-master-blue font-bold border-b-2 border-master-red pb-1 hover:text-master-red transition">
+                        Read More About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-master-grey">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-master-red font-bold tracking-widest uppercase text-sm">Our Catalog</span>
+                <h2 class="text-4xl font-bold text-master-blue mt-2 uppercase">Explore Our Products</h2>
+                <div class="w-24 h-1 bg-master-red mx-auto mt-4"></div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 bg-master-blue text-white rounded-full font-medium shadow-md">All</button>
+                <button class="px-6 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full font-medium shadow-sm transition">Pavers</button>
+                <button class="px-6 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full font-medium shadow-sm transition">Blocks</button>
+                <button class="px-6 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full font-medium shadow-sm transition">Roads & Civils</button>
+                <button class="px-6 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full font-medium shadow-sm transition">Architectural</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Smart Pavers -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/smart-pavers.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/315299/FFF?text=Smart+Pavers';"
+                             alt="Smart Pavers" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-master-red text-white text-xs font-bold px-3 py-1 rounded">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Smart Pavers</h3>
+                        <p class="text-gray-500 text-sm mb-4">New innovation for eye-catching outdoor spaces. Low maintenance.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Double T Pavers -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/double-t-pavers.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/e2e8f0/000?text=Double+T+Paver';"
+                             alt="Double T Pavers" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Double T Pavers</h3>
+                        <p class="text-gray-500 text-sm mb-4">Heavy duty interlocking. <br>Thickness: 60mm & 80mm.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Rectangular Pavers -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/rectangular-pavers.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/e2e8f0/000?text=Rectangular+Paver';"
+                             alt="Rectangular Pavers" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Rectangular Pavers</h3>
+                        <p class="text-gray-500 text-sm mb-4">Classic durability.<br>Thickness: 60mm & 80mm.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Hollow Blocks -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/blocks.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/f3f4f6/333?text=Construction+Blocks';"
+                             alt="Hollow Blocks" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Construction Blocks</h3>
+                        <p class="text-gray-500 text-sm mb-4">Solid & Hollow (8x6x16, 8x8x16).<br>High strength load bearing.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Culverts -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/culverts.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/777/FFF?text=Culverts';"
+                             alt="Culverts" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Concrete Culverts</h3>
+                        <p class="text-gray-500 text-sm mb-4">Diameters: 300mm - 1200mm.<br>For road drainage systems.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Road Kerbs -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/road-kerbs.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/999/FFF?text=Road+Kerbs';"
+                             alt="Road Kerbs" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Road Kerbs</h3>
+                        <p class="text-gray-500 text-sm mb-4">Standard road profiles.<br>Big (1m) & Small sizes available.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                 <!-- Ventilators -->
+                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/ventilators.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/e2e8f0/000?text=Ventilators';"
+                             alt="Ventilators" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Concrete Ventilators</h3>
+                        <p class="text-gray-500 text-sm mb-4">Provide airflow and light.<br>Various shapes (300mm).</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Balustrades -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/balustrades.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/ddd/000?text=Balustrades';"
+                             alt="Balustrades" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Balustrades</h3>
+                        <p class="text-gray-500 text-sm mb-4">Smoothened finish (no paste filling needed).<br>Height: 2.5ft & 3ft.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Inspection Covers -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/inspection-covers.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/555/FFF?text=Manhole+Covers';"
+                             alt="Inspection Covers" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Inspection Covers</h3>
+                        <p class="text-gray-500 text-sm mb-4">Circular (600mm) & Rectangular Manhole covers.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fencing Poles -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/fencing-poles.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/aaa/000?text=Fencing+Poles';"
+                             alt="Fencing Poles" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Fencing Poles</h3>
+                        <p class="text-gray-500 text-sm mb-4">Reinforced concrete poles.<br>4x4 Thickness, 7-10ft length.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Aggregates -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/aggregates.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/333/FFF?text=Aggregates';"
+                             alt="Aggregates" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Aggregates</h3>
+                        <p class="text-gray-500 text-sm mb-4">3/8", 1/2", 3/4" & Stone Dust.<br>High quality crushed stone.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                 <!-- Hexagonal Pavers -->
+                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group product-card">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/products/hexagonal-pavers.jpg" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x600/e2e8f0/000?text=Hexagonal+Pavers';"
+                             alt="Hexagonal Pavers" 
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hexagonal Pavers</h3>
+                        <p class="text-gray-500 text-sm mb-4">Geometric elegance.<br>Thickness: 60mm.</p>
+                        <a href="#contact" class="text-master-blue font-bold text-sm uppercase hover:text-master-red">Order Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block px-10 py-4 border-2 border-master-blue text-master-blue font-bold rounded hover:bg-master-blue hover:text-white transition uppercase tracking-wide">
+                    Request Full Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="py-20 bg-master-blue text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-master-red opacity-10 rounded-full blur-3xl"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 uppercase">Why Choose Master Industries?</h2>
+                    <p class="text-gray-300 mb-8 text-lg">We combine advanced technology with local expertise to deliver products that stand the test of time.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-master-red flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Advanced Technology</h4>
+                                <p class="text-gray-400">Our automated batching and mixing systems ensure precise material ratios for maximum strength.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-master-red flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Durability Guaranteed</h4>
+                                <p class="text-gray-400">Products designed to withstand heavy loads and harsh tropical weather conditions.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-master-red flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Eco-Friendly Process</h4>
+                                <p class="text-gray-400">Efficient production processes that minimize waste and environmental impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Automated+Machine" alt="Automated Machinery" class="rounded-lg shadow-2xl border-4 border-white/10">
+                    <div class="absolute -bottom-6 -left-6 bg-white text-master-blue p-6 rounded shadow-lg max-w-xs">
+                        <p class="font-bold italic">"We have unleashed a state-of-the-art fully automated production line."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <span class="text-master-red font-bold tracking-widest uppercase text-sm">Get In Touch</span>
+                    <h2 class="text-4xl font-bold text-master-blue mt-2 mb-8 uppercase">Contact Us</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-master-grey rounded flex items-center justify-center text-master-red text-xl group-hover:bg-master-red group-hover:text-white transition">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Visit Factory & Sales Office</h4>
+                                <p class="text-gray-600">Namanve Industrial Park (After MOGAS Petro Station)<br>P.O. Box 586, Mukono, Uganda</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-master-grey rounded flex items-center justify-center text-master-red text-xl group-hover:bg-master-red group-hover:text-white transition">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Call Us</h4>
+                                <p class="text-gray-600 font-medium">+256 772 588 960</p>
+                                <p class="text-gray-600 font-medium">+256 703 742 763</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-master-grey rounded flex items-center justify-center text-master-red text-xl group-hover:bg-master-red group-hover:text-white transition">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Email Us</h4>
+                                <p class="text-gray-600">masterindustriesug@yahoo.com</p>
+                                <p class="text-gray-600">www.masterindustries.biz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="mt-8 h-64 bg-gray-200 rounded-lg overflow-hidden relative">
+                         <img src="images/contact/map.jpg" 
+                              onerror="this.onerror=null; this.src='https://placehold.co/600x300/e2e8f0/666?text=Map+Location:+Namanve';"
+                              class="w-full h-full object-cover">
+                         <a href="https://goo.gl/maps/placeholder" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/20 transition group">
+                            <span class="bg-white px-4 py-2 rounded shadow font-bold text-master-blue group-hover:scale-105 transition">Open in Google Maps</span>
+                         </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-master-grey p-8 rounded-lg shadow-inner">
+                    <h3 class="text-2xl font-bold text-master-blue mb-6">Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2 text-sm uppercase">Your Name</label>
+                                <input type="text" id="formName" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-master-red focus:ring-1 focus:ring-master-red outline-none transition" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2 text-sm uppercase">Phone Number</label>
+                                <input type="tel" id="formPhone" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-master-red focus:ring-1 focus:ring-master-red outline-none transition" placeholder="+256..." required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2 text-sm uppercase">Email Address</label>
+                            <input type="email" id="formEmail" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-master-red focus:ring-1 focus:ring-master-red outline-none transition" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2 text-sm uppercase">Interested In</label>
+                            <select id="formInterest" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-master-red focus:ring-1 focus:ring-master-red outline-none transition">
+                                <option>General Inquiry</option>
+                                <option>Pavers & Blocks</option>
+                                <option>Road Kerbs & Culverts</option>
+                                <option>Aggregates</option>
+                                <option>Installation Services</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2 text-sm uppercase">Message</label>
+                            <textarea id="formMessage" rows="4" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-master-red focus:ring-1 focus:ring-master-red outline-none transition" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-master-red text-white font-bold py-4 rounded hover:bg-red-700 transition uppercase shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-master-blue text-white pt-16 pb-8 border-t-4 border-master-red">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 font-heading uppercase">Master Industries</h3>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                        We manufacture a wide range of distinguished and authentic concrete products sure to fit your budget and accord you a lasting impression.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/masterindustriesug" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-master-red transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/masterindustries" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-master-red transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-master-red transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 uppercase text-master-red">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#home" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> About Us</a></li>
+                        <li><a href="#products" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Our Products</a></li>
+                        <li><a href="#contact" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 uppercase text-master-red">Products</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Smart Pavers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Solid & Hollow Blocks</a></li>
+                        <li><a href="#" class="hover:text-white transition">Road Kerbs & Culverts</a></li>
+                        <li><a href="#" class="hover:text-white transition">Concrete Ventilators</a></li>
+                        <li><a href="#" class="hover:text-white transition">Fencing Poles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 uppercase text-master-red">Contact Info</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-master-red"></i>
+                            <span>Namanve Industrial Park,<br>Mukono, Uganda</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-master-red"></i>
+                            <span>+256 772 588 960</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-master-red"></i>
+                            <span>masterindustriesug@yahoo.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2026 Master Industries (U) Ltd. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <span class="mr-4">Beauty That Lasts Generations</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple Slider Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto slide for non-video slides (Optional - currently disabled to let video play)
+        setInterval(() => changeSlide(1), 5000);
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const email = document.getElementById('formEmail').value;
+            const interest = document.getElementById('formInterest').value;
+            const message = document.getElementById('formMessage').value;
+            
+            const subject = `Inquiry: ${interest} - ${name}`;
+            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0AInterested In: ${interest}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            
+            // Open default email client
+            window.location.href = `mailto:masterindustriesug@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`; // No encodeURIComponent for body as manual encoding is safer for line breaks across clients
+            
+            alert('Opening your email client to send the message...');
+        });
+    </script>
+</body>
+</html>
